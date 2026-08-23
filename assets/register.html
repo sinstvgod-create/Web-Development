@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | OverloadFit</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/pro-theme.css">
+</head>
+
+<body>
+
+    <!-- BACK TO HOME ARROW -->
+    <a href="index.html" class="back-home-btn" title="Back to Home">
+        <i class="bi bi-arrow-left"></i>
+    </a>
+
+    <div class="auth-container">
+        <div class="auth-card register-card">
+            <div class="logo">
+                <i class="bi bi-lightning-charge-fill"></i>
+                OVERLOAD<span>FIT</span>
+            </div>
+
+            <h1>Create Account</h1>
+            <p>Start your fitness journey today.</p>
+
+            <form id="registerForm" novalidate>
+                <div class="input-box">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Enter name" required autocomplete="name">
+                    <span class="field-error" id="nameError" style="color: #ff5252; font-size: 0.8rem; display: none;"></span>
+                </div>
+
+                <div class="input-box">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" placeholder="Enter age" required min="10" max="120">
+                    <span class="field-error" id="ageError" style="color: #ff5252; font-size: 0.8rem; display: none;"></span>
+                </div>
+
+                <div class="input-box">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="Enter 10-digit phone number" required pattern="[0-9]{10}">
+                    <span class="field-error" id="phoneError" style="color: #ff5252; font-size: 0.8rem; display: none;"></span>
+                </div>
+
+                <div class="input-box">
+                    <label for="gender">Gender</label>
+                    <select id="gender" required>
+                        <option value="" disabled selected>Select gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <span class="field-error" id="genderError" style="color: #ff5252; font-size: 0.8rem; display: none;"></span>
+                </div>
+
+                <div class="input-box">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" required>
+                    <span class="field-error" id="dobError" style="color: #ff5252; font-size: 0.8rem; display: none;"></span>
+                </div>
+
+                <div class="input-box">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter email" required autocomplete="email">
+                    <span class="field-error" id="emailError" style="color: #ff5252; font-size: 0.8rem; display: none;"></span>
+                </div>
+
+                <div class="input-box" style="position: relative;">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Create password (min 6 chars)" required minlength="6" autocomplete="new-password">
+                    <i class="bi bi-eye-slash" id="toggleRegPasswordBtn" style="position: absolute; right: 15px; top: 38px; cursor: pointer; color: #a0a0a0;"></i>
+                    <span class="field-error" id="passwordError" style="color: #ff5252; font-size: 0.8rem; display: none;"></span>
+                </div>
+
+                <div class="terms-checkbox-group">
+                    <input type="checkbox" id="registerTerms" required>
+                    <label for="registerTerms">I agree with all <a href="TandC.html">Terms and Conditions</a></label>
+                </div>
+
+                <button type="submit" id="registerSubmitBtn">Create Account</button>
+
+                <p id="registerMessage" style="margin-top: 10px; font-size: 0.9rem; min-height: 20px;"></p>
+            </form>
+
+            <div class="switch">
+                Already have an account?
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/cyber-effects.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleBtn = document.getElementById('toggleRegPasswordBtn');
+            const passwordInput = document.getElementById('password');
+
+            if (toggleBtn && passwordInput) {
+                toggleBtn.addEventListener('click', () => {
+                    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                    passwordInput.setAttribute('type', type);
+                    toggleBtn.classList.toggle('bi-eye');
+                    toggleBtn.classList.toggle('bi-eye-slash');
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

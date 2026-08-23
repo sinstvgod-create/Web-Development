@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Hub | OverloadFit</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/pro-theme.css">
+</head>
+
+<body>
+
+    <nav class="dashboard-nav">
+        <a href="#" id="logoLink" style="text-decoration: none; color: inherit;">
+            <div class="logo">
+                <i class="bi bi-lightning-charge-fill"></i>
+                OVERLOAD<span>FIT</span>
+            </div>
+        </a>
+
+        <div class="nav-actions">
+            <a href="index.html" class="nav-item">
+                <i class="bi bi-house-door-fill"></i>
+                <span>Home</span>
+            </a>
+            <a href="about.html" class="nav-item">
+                <i class="bi bi-info-circle-fill"></i>
+                <span>About Us</span>
+            </a>
+            <a href="features.html" class="nav-item">
+                <i class="bi bi-stars"></i>
+                <span>Features</span>
+            </a>
+            <a href="dashboard.html" class="nav-item active">
+                <i class="bi bi-grid-fill"></i>
+                <span>Training Hub</span>
+            </a>
+            <a href="workout.html" class="nav-item">
+                <i class="bi bi-lightning-charge-fill"></i>
+                <span>Workout</span>
+            </a>
+            <a href="diet.html" class="nav-item">
+                <i class="bi bi-flower1"></i>
+                <span>Diet</span>
+            </a>
+            <a href="progress.html" class="nav-item">
+                <i class="bi bi-graph-up-arrow"></i>
+                <span>Progress</span>
+            </a>
+            <a href="profile.html" class="nav-item">
+                <i class="bi bi-person-circle"></i>
+                <span>Profile</span>
+            </a>
+            <button onclick="logout()" class="logout-btn">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="dashboard-container">
+
+        <div class="heading">
+            <h1>Training Command Center</h1>
+            <p>Select your active physique profile to dynamically load specialized workout splits, adaptive macronutrient targets, and progression algorithms.</p>
+        </div>
+
+        <div class="hub-metrics-banner">
+            <div class="metric-chip">
+                <i class="bi bi-person-badge"></i>
+                <div>
+                    <span>Active Profile</span>
+                    <strong id="activeProfileChip">Lean</strong>
+                </div>
+            </div>
+
+            <div class="metric-chip">
+                <i class="bi bi-fire"></i>
+                <div>
+                    <span>Target Calories</span>
+                    <strong id="targetCalChip">2,200 kcal</strong>
+                </div>
+            </div>
+
+            <div class="metric-chip">
+                <i class="bi bi-pie-chart-fill"></i>
+                <div>
+                    <span>Protein Ratio</span>
+                    <strong id="proteinRatioChip">160g / day</strong>
+                </div>
+            </div>
+
+            <div class="metric-chip">
+                <i class="bi bi-lightning-auto"></i>
+                <div>
+                    <span>Engine Status</span>
+                    <strong id="engineStatusChip" style="color: #00e676;">Active (+5% / -10%)</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="physique-section">
+            <div class="section-header">
+                <h2>Select Target Physique</h2>
+                <span class="badge-tag"><i class="bi bi-sliders"></i> Isolated Storage Mode</span>
+            </div>
+
+            <div class="physique-grid" id="physiqueGrid">
+                <div class="physique-card" id="card-Lean" data-physique="Lean" onclick="selectPhysique('Lean')">
+                    <i class="bi bi-person"></i>
+                    <h3>Lean</h3>
+                    <p>Fat loss + muscle definition</p>
+                </div>
+                <div class="physique-card" id="card-Bulk" data-physique="Bulk" onclick="selectPhysique('Bulk')">
+                    <i class="bi bi-fire"></i>
+                    <h3>Bulk</h3>
+                    <p>Maximum muscle growth</p>
+                </div>
+                <div class="physique-card" id="card-Skinny" data-physique="Skinny" onclick="selectPhysique('Skinny')">
+                    <i class="bi bi-graph-up-arrow"></i>
+                    <h3>Skinny Gain</h3>
+                    <p>Healthy weight gain</p>
+                </div>
+                <div class="physique-card" id="card-Athletic" data-physique="Athletic" onclick="selectPhysique('Athletic')">
+                    <i class="bi bi-lightning-charge-fill"></i>
+                    <h3>Athletic</h3>
+                    <p>Strength + performance</p>
+                </div>
+                <div class="physique-card" id="card-Cutting" data-physique="Cutting" onclick="selectPhysique('Cutting')">
+                    <i class="bi bi-scissors"></i>
+                    <h3>Cutting</h3>
+                    <p>Extreme fat shredding</p>
+                </div>
+                <div class="physique-card" id="card-Maingain" data-physique="Maingain" onclick="selectPhysique('Maingain')">
+                    <i class="bi bi-arrow-repeat"></i>
+                    <h3>Maingain</h3>
+                    <p>Recomposition & maintenance</p>
+                </div>
+                <div class="physique-card" id="card-Powerlifting" data-physique="Powerlifting" onclick="selectPhysique('Powerlifting')">
+                    <i class="bi bi-trophy-fill"></i>
+                    <h3>Powerlifting</h3>
+                    <p>Maximal strength & power</p>
+                </div>
+                <div class="physique-card" id="card-Endurance" data-physique="Endurance" onclick="selectPhysique('Endurance')">
+                    <i class="bi bi-heart-pulse-fill"></i>
+                    <h3>Endurance</h3>
+                    <p>Stamina & cardiovascular fitness</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quick-actions-bar">
+            <a href="workout.html" class="action-tile">
+                <i class="bi bi-journal-plus"></i>
+                <div>
+                    <h4>Log Workout</h4>
+                    <p>Record sets & reps</p>
+                </div>
+            </a>
+
+            <a href="diet.html" class="action-tile" id="dashboardDietLink">
+                <i class="bi bi-droplet-half"></i>
+                <div>
+                    <h4>Log Nutrition & Water</h4>
+                    <p>Track daily targets</p>
+                </div>
+            </a>
+
+            <a href="progress.html" class="action-tile">
+                <i class="bi bi-line-chart"></i>
+                <div>
+                    <h4>View Analytics</h4>
+                    <p>Check daily progress</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="dashboard-card" style="background: rgba(13, 19, 29, 0.85); border: 1px solid rgba(0, 170, 255, 0.35); border-radius: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
+                <h2 style="margin: 0;"><i class="bi bi-person-walking"></i> Physique-Adaptive Cardio & Step Target</h2>
+                <span id="cardioBadge" style="background: rgba(0, 230, 118, 0.15); color: #00e676; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: 600;">ACTIVE PRESCRIPTION</span>
+            </div>
+            <div id="cardioPrescriptionBox">
+                <p style="color: #b5b5b5;">Select a physique profile to display daily cardio and step prescriptions.</p>
+            </div>
+        </div>
+
+        <div class="dashboard-card profile-card">
+            <h2><i class="bi bi-sliders"></i> Profile Setup & Customization</h2>
+            <form id="profileCustomizationForm" onsubmit="return false;">
+                <div id="questions">
+                    <p>Select your target physique above to generate personalized metric options.</p>
+                </div>
+            </form>
+            <div class="card-footer-action" style="margin-top: 15px;">
+                <a href="workout.html" class="start-workout-btn">
+                    Start Workout <i class="bi bi-arrow-right-short"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="goal-grid">
+            <div class="dashboard-card">
+                <h2><i class="bi bi-fire"></i> Today's Goals</h2>
+                <div id="dailyGoals">
+                    <p>Select physique to generate daily goals.</p>
+                </div>
+            </div>
+
+            <div class="dashboard-card">
+                <h2><i class="bi bi-lightning-fill"></i> Tomorrow's Goals</h2>
+                <div id="nextGoals">
+                    <p>Your next day targets will appear here.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-card">
+            <h2><i class="bi bi-barbell"></i> Recommended Workout Plan</h2>
+            <div id="workoutPlan">
+                <p>Your tailored workout split will display here based on selected physique.</p>
+            </div>
+        </div>
+
+        <div class="dashboard-card">
+            <h2><i class="bi bi-egg-fried"></i> Recommended Diet Plan</h2>
+            <div id="dietPlan">
+                <p>Nutritional guidelines will populate based on chosen profile.</p>
+            </div>
+        </div>
+
+        <div class="dashboard-card" style="margin-top: 25px;">
+            <h2><i class="bi bi-calculator"></i> Quick 1RM Strength Estimator</h2>
+            <p style="color: #a0a0a0; font-size: 0.9rem; margin-bottom: 15px;">Calculate estimated One-Rep Max using the Epley formula: <code>Weight × (1 + Reps/30)</code></p>
+            
+            <form id="oneRmForm" style="display: flex; flex-wrap: wrap; gap: 15px; align-items: center;">
+                <input type="number" id="calcWeight" placeholder="Weight (kg)" min="1" step="0.5" required style="padding: 10px 15px; border-radius: 8px; border: 1px solid #333; background: #080c13; color: #fff; width: 140px; outline: none;">
+                <input type="number" id="calcReps" placeholder="Reps performed" min="1" max="30" required style="padding: 10px 15px; border-radius: 8px; border: 1px solid #333; background: #080c13; color: #fff; width: 150px; outline: none;">
+                <button type="submit" class="start-workout-btn" style="border: none; cursor: pointer; padding: 10px 24px; border-radius: 30px;">Calculate 1RM</button>
+                <div id="oneRmResult" style="display: none; padding: 8px 18px; background: rgba(0, 170, 255, 0.12); border: 1px solid rgba(0, 170, 255, 0.35); border-radius: 10px; color: #00aaff; font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 600; align-items: center; gap: 8px;"></div>
+            </form>
+        </div>
+        <div class="dashboard-card" style="margin-top: 25px;">
+            <h2><i class="bi bi-award-fill"></i> Wilks / Powerlifting Coefficient Calculator</h2>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 15px;">Normalized strength score across standard bodyweight ratios.</p>
+            
+            <form id="wilksForm" style="display: flex; flex-wrap: wrap; gap: 15px; align-items: center;">
+                <input type="number" id="wilksBodyweight" placeholder="Bodyweight (kg)" min="30" step="0.5" required style="padding: 10px 15px; border-radius: 8px; border: 1px solid rgba(0, 240, 255, 0.2); background: #060b14; color: #fff; width: 150px; outline: none;">
+                <input type="number" id="wilksTotal" placeholder="Total Lifted (kg)" min="20" step="0.5" required style="padding: 10px 15px; border-radius: 8px; border: 1px solid rgba(0, 240, 255, 0.2); background: #060b14; color: #fff; width: 160px; outline: none;">
+                <select id="wilksGender" style="padding: 10px 15px; border-radius: 8px; border: 1px solid rgba(0, 240, 255, 0.2); background: #060b14; color: #fff; width: 120px; outline: none;">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+                <button type="submit" class="start-workout-btn" style="cursor: pointer; padding: 10px 24px; border: none;">Calculate Wilks</button>
+                <div id="wilksResult" style="display: none; padding: 8px 18px; background: var(--cyan-subtle); border: 1px solid var(--hud-border); border-radius: 8px; color: var(--cyan); font-family: var(--font-cyber); font-size: 14px; font-weight: 600; align-items: center; gap: 8px;"></div>
+            </form>
+        </div>
+
+    </section>
+
+    <script src="js/app.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/cyber-effects.js"></script>
+    <script src="js/cyber-features.js"></script>
+</body>
+
+</html>

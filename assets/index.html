@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OverloadFit | Transform Your Body</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pro-theme.css">
+</head>
+
+<body>
+
+    <nav class="dashboard-nav">
+        <a href="index.html" id="logoLink" style="text-decoration: none; color: inherit;">
+            <div class="logo">
+                <i class="bi bi-lightning-charge-fill"></i>
+                OVERLOAD<span>FIT</span>
+            </div>
+        </a>
+
+        <div class="nav-actions">
+            <a href="index.html" class="nav-item active">
+                <i class="bi bi-house-door-fill"></i>
+                <span>Home</span>
+            </a>
+            <a href="about.html" class="nav-item">
+                <i class="bi bi-info-circle-fill"></i>
+                <span>About Us</span>
+            </a>
+            <a href="features.html" class="nav-item">
+                <i class="bi bi-stars"></i>
+                <span>Features</span>
+            </a>
+            <a href="dashboard.html" class="nav-item logged-in-link" id="nav-dashboard-link">
+                <i class="bi bi-grid-fill"></i>
+                <span>Training Hub</span>
+            </a>
+            <a href="workout.html" class="nav-item logged-in-link">
+                <i class="bi bi-lightning-charge-fill"></i>
+                <span>Workout</span>
+            </a>
+            <a href="diet.html" class="nav-item logged-in-link">
+                <i class="bi bi-egg-fried"></i>
+                <span>Diet</span>
+            </a>
+            <a href="progress.html" class="nav-item logged-in-link">
+                <i class="bi bi-graph-up-arrow"></i>
+                <span>Progress</span>
+            </a>
+            <a href="profile.html" class="nav-item logged-in-link">
+                <i class="bi bi-person-circle"></i>
+                <span>Profile</span>
+            </a>
+            <a href="login.html" class="nav-item" id="nav-login-btn">
+                <i class="bi bi-box-arrow-in-right"></i>
+                <span>Login</span>
+            </a>
+            <a href="register.html" class="register-btn nav-item" id="nav-register-btn">
+                <i class="bi bi-person-plus-fill"></i>
+                <span>Register</span>
+            </a>
+            <button onclick="logout()" class="logout-btn" id="nav-static-logout-btn" style="display: none;">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Build Your <span>Dream Physique</span></h1>
+            <p>AI-powered workout planning, progressive overload tracking, and personalized nutrition science.</p>
+            <div class="hero-buttons">
+                <a href="register.html" class="btn-primary"><i class="bi bi-rocket-takeoff-fill"></i> Start Transformation</a>
+                <a href="login.html" class="btn-secondary"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="home-stats-banner">
+        <div class="home-stat-item">
+            <h2>8+</h2>
+            <p>Physique Splits</p>
+        </div>
+        <div class="home-stat-item">
+            <h2>100%</h2>
+            <p>Data Privacy</p>
+        </div>
+        <div class="home-stat-item">
+            <h2>+5%</h2>
+            <p>Smart Progression</p>
+        </div>
+        <div class="home-stat-item">
+            <h2>-10%</h2>
+            <p>Auto Deload Protection</p>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <h2>Why Choose OverloadFit?</h2>
+        <p class="section-subtitle">Engineered for athletes who demand scientific tracking over guesswork.</p>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <i class="bi bi-lightning-charge"></i>
+                <h3>Smart Workouts</h3>
+                <p>Auto progression based on your performance with specific set/rep target calculations.</p>
+            </div>
+
+            <div class="feature-card">
+                <i class="bi bi-graph-up-arrow"></i>
+                <h3>Progress Analytics</h3>
+                <p>Interactive Chart.js visualizations tracking peak loads, total volume, and consistency.</p>
+            </div>
+
+            <div class="feature-card">
+                <i class="bi bi-egg-fried"></i>
+                <h3>Diet Planner</h3>
+                <p>Physique-tailored daily macronutrients, meal cycle trackers, and hydration tools.</p>
+            </div>
+
+            <div class="feature-card">
+                <i class="bi bi-cpu"></i>
+                <h3>Progressive Engine</h3>
+                <p>Automated +5% overload increments and -10% safety deload algorithms to prevent plateaus.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="physique-preview-section">
+        <h2>Tailored for Every Target Physique</h2>
+        <div class="physique-preview-grid">
+            <div class="preview-card">
+                <i class="bi bi-person-fill"></i>
+                <h3>Lean & Shredded</h3>
+                <p>Fat loss paired with high protein muscle preservation.</p>
+            </div>
+            <div class="preview-card">
+                <i class="bi bi-fire"></i>
+                <h3>Hypertrophy Bulk</h3>
+                <p>Maximum muscle mass growth with caloric surplus mapping.</p>
+            </div>
+            <div class="preview-card">
+                <i class="bi bi-trophy-fill"></i>
+                <h3>Powerlifting</h3>
+                <p>Maximal 1RM strength progression on squat, bench, and deadlift.</p>
+            </div>
+            <div class="preview-card">
+                <i class="bi bi-activity"></i>
+                <h3>Endurance</h3>
+                <p>Cardiovascular stamina and distance performance focus.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="api-explorer-section" style="padding: 60px 20px; max-width: 1200px; margin: 0 auto; text-align: center;">
+        <h2 style="font-family: var(--font-cyber); font-size: 32px; margin-bottom: 10px;">Explore Exercise Database</h2>
+        <p class="section-subtitle" style="margin-bottom: 25px; color: var(--text-secondary);">Search real-time exercise techniques powered by OverloadFit.</p>
+        
+        <form id="exerciseSearchForm" style="display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; flex-wrap: wrap;">
+            <input type="text" id="exerciseQuery" placeholder="e.g. Bench Press, Squat, Curl" required style="padding: 12px 18px; border-radius: 8px; border: 1px solid rgba(0, 240, 255, 0.2); background: #060b14; color: #fff; width: 100%; max-width: 400px; outline: none; font-family: var(--font-body);">
+            <button type="submit" class="start-workout-btn" style="cursor: pointer; padding: 12px 24px; border: none;"><i class="bi bi-search"></i> Search</button>
+        </form>
+
+        <div id="exerciseResults" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; text-align: left;"></div>
+    </section>
+
+    <section class="cta-banner">
+        <h2>Take Control of Your Fitness Today</h2>
+        <p>Join OverloadFit and experience scientifically backed progressive overload tracking.</p>
+        <a href="register.html" class="btn-primary"><i class="bi bi-check-circle-fill"></i> Create Free Account</a>
+    </section>
+
+    <footer>
+        <h3>OVERLOAD<span>FIT</span></h3>
+        <p>Train Smart. Grow Strong. Transform Yourself.</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/cyber-effects.js"></script>
+</body>
+
+</html>

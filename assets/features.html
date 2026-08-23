@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features | OverloadFit</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/features.css">
+    <link rel="stylesheet" href="css/pro-theme.css">
+</head>
+
+<body>
+
+    <nav class="dashboard-nav">
+        <a href="index.html" id="logoLink" style="text-decoration: none; color: inherit;">
+            <div class="logo">
+                <i class="bi bi-lightning-charge-fill"></i>
+                OVERLOAD<span>FIT</span>
+            </div>
+        </a>
+
+        <div class="nav-actions">
+            <a href="index.html" class="nav-item">
+                <i class="bi bi-house-door-fill"></i>
+                <span>Home</span>
+            </a>
+            <a href="about.html" class="nav-item">
+                <i class="bi bi-info-circle-fill"></i>
+                <span>About Us</span>
+            </a>
+            <a href="features.html" class="nav-item active">
+                <i class="bi bi-stars"></i>
+                <span>Features</span>
+            </a>
+            <a href="dashboard.html" class="nav-item logged-in-link" id="nav-dashboard-link">
+                <i class="bi bi-grid-fill"></i>
+                <span>Training Hub</span>
+            </a>
+            <a href="workout.html" class="nav-item logged-in-link">
+                <i class="bi bi-lightning-charge-fill"></i>
+                <span>Workout</span>
+            </a>
+            <a href="diet.html" class="nav-item logged-in-link">
+                <i class="bi bi-flower1"></i>
+                <span>Diet</span>
+            </a>
+            <a href="progress.html" class="nav-item logged-in-link">
+                <i class="bi bi-graph-up-arrow"></i>
+                <span>Progress</span>
+            </a>
+            <a href="profile.html" class="nav-item logged-in-link">
+                <i class="bi bi-person-circle"></i>
+                <span>Profile</span>
+            </a>
+            <a href="login.html" class="nav-item" id="nav-login-btn">
+                <i class="bi bi-box-arrow-in-right"></i>
+                <span>Login</span>
+            </a>
+            <a href="register.html" class="register-btn nav-item" id="nav-register-btn">
+                <i class="bi bi-person-plus-fill"></i>
+                <span>Register</span>
+            </a>
+            <button onclick="logout()" class="logout-btn" id="nav-static-logout-btn" style="display: none;">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="features-hero">
+        <h1>POWERFUL <span>FEATURES</span></h1>
+        <p>Engineered for automated progressive overload, muscle recovery analytics, and adaptive nutrition science.</p>
+    </section>
+
+    <div class="features-container">
+
+        <div style="margin-bottom: 25px; text-align: center;">
+            <input type="text" id="featureSearchInput" placeholder="Search features by keyword..." style="padding: 12px 18px; border-radius: 6px; border: 1px solid rgba(0, 240, 255, 0.2); background: #060b14; color: #fff; width: 100%; max-width: 450px; outline: none;">
+        </div>
+
+        <div class="feature-filter-bar">
+            <button class="filter-btn active" onclick="filterFeatures('all', event)">All Features</button>
+            <button class="filter-btn" onclick="filterFeatures('training', event)"><i class="bi bi-barbell"></i> Training & Engine</button>
+            <button class="filter-btn" onclick="filterFeatures('nutrition', event)"><i class="bi bi-egg-fried"></i> Nutrition & Hydration</button>
+            <button class="filter-btn" onclick="filterFeatures('analytics', event)"><i class="bi bi-graph-up-arrow"></i> Analytics & Recovery</button>
+            <button class="filter-btn" onclick="filterFeatures('pro', event)"><i class="bi bi-star-fill" style="color: #ffd700;"></i> PRO Exclusive</button>
+        </div>
+
+        <div class="features-grid" id="featuresGrid">
+
+            <div class="feature-card" data-category="training">
+                <i class="bi bi-cpu-fill"></i>
+                <h2>Dynamic Control Hub</h2>
+                <p>Tailors daily goals, progressive overload targets, and specialized routines based on your active physique choice across 8 isolated profiles.</p>
+            </div>
+
+            <div class="feature-card" data-category="training">
+                <i class="bi bi-journal-bookmark-fill"></i>
+                <h2>Smart Overload Engine</h2>
+                <p>Calculates +5% progression upon hitting repetition targets and applies automated -10% deload protection following double missed targets.</p>
+            </div>
+
+            <div class="feature-card" data-category="training">
+                <i class="bi bi-heart-pulse-fill"></i>
+                <h2>Pre-Workout Readiness Check</h2>
+                <p>Evaluates sleep quality, energy levels, and muscular soreness on a calibrated scale to optimize your daily training intensity.</p>
+            </div>
+
+            <div class="feature-card" data-category="training">
+                <i class="bi bi-fire"></i>
+                <h2>Dynamic Warm-Up Generator</h2>
+                <p>Automatically calculates ramp-up loads (Empty bar, 50%, 70%, 85%) based on your working set weight to prepare joint tissue and the CNS.</p>
+            </div>
+
+            <div class="feature-card" data-category="training pro">
+                <i class="bi bi-disc" style="color: #ffd700;"></i>
+                <h2>Olympic Barbell Visualizer (PRO)</h2>
+                <p>Generates an interactive 2D Olympic barbell loaded with standardized competition colored bumper plates for any target weight.</p>
+            </div>
+
+            <div class="feature-card" data-category="training pro">
+                <i class="bi bi-megaphone-fill" style="color: #ffd700;"></i>
+                <h2>Voice-Guided Rest Timer (PRO)</h2>
+                <p>Synthesized audio voice alerts calling out 30s remaining, 10s set prep warnings, and set kickoff notifications.</p>
+            </div>
+
+            <div class="feature-card" data-category="analytics pro">
+                <i class="bi bi-battery-charging" style="color: #ffd700;"></i>
+                <h2>Muscle Recovery Forecaster (PRO)</h2>
+                <p>Monitors recovery readiness across Chest, Back, Legs, Shoulders, and Arms based on logged sets and elapsed recovery hours.</p>
+            </div>
+
+            <div class="feature-card" data-category="analytics pro">
+                <i class="bi bi-radar" style="color: #ffd700;"></i>
+                <h2>Volume Radar & Deload Alarm (PRO)</h2>
+                <p>Visualizes anatomical volume distribution across muscle groups and flags overtraining risks after 4 consecutive overload weeks.</p>
+            </div>
+
+            <div class="feature-card" data-category="nutrition">
+                <i class="bi bi-droplet-half"></i>
+                <h2>Precision Hydration & Electrolytes</h2>
+                <p>Interactive fluid intake meter with rapid incremental buttons and salt replenishment verification for performance hydration.</p>
+            </div>
+
+            <div class="feature-card" data-category="nutrition pro">
+                <i class="bi bi-calculator-fill" style="color: #ffd700;"></i>
+                <h2>Interactive Food Diary (PRO)</h2>
+                <p>Log custom meals and macro ratios with auto-deducting remaining daily calories, protein, carbs, and fats.</p>
+            </div>
+
+            <div class="feature-card" data-category="analytics">
+                <i class="bi bi-rulers"></i>
+                <h2>Circumference & Bio-Metrics Log</h2>
+                <p>Track body measurements (chest, waist, arms, thighs) alongside daily scale weight directly in your athlete profile.</p>
+            </div>
+
+            <div class="feature-card" data-category="training">
+                <i class="bi bi-person-walking"></i>
+                <h2>Physique-Adaptive Cardio Prescriptions</h2>
+                <p>Dynamic aerobic plans tailored to every body type, from fasted incline walking for Cutting to Zone 2 mileage for Endurance.</p>
+            </div>
+
+        </div>
+
+        <div class="feature-showcase-banner">
+            <div class="showcase-content">
+                <h2>Ready to Elevate Your Training?</h2>
+                <p>Select your active physique profile and let OverloadFit's algorithmic intelligence guide your transformation.</p>
+                <a href="dashboard.html" class="showcase-btn"><i class="bi bi-rocket-takeoff-fill"></i> Go to Training Hub</a>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2 class="section-title"><i class="bi bi-question-circle-fill"></i> Frequently Asked Questions</h2>
+            
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        How does the Smart Overload Engine determine progression?
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Completing your target reps executes an automated +5% weight progression for your next session. If target reps are missed across two consecutive workouts, the engine triggers a -10% deload to ensure recovery.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        How is the Muscle Recovery Forecaster calculated?
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The system computes muscle recovery based on total volume logged and elapsed hours since your last session for that specific muscle group (45% at &lt;24h, 75% at &lt;48h, 100% fully recovered).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        Are my custom food entries and body measurements saved locally?
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. All workout logs, food diaries, body measurements, and active physique configurations are stored locally on your device with complete multi-user separation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/cyber-effects.js"></script>
+
+    <script>
+        let currentCategory = 'all';
+
+        function filterFeatures(category, evt) {
+            currentCategory = category;
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            if (evt && evt.currentTarget) {
+                evt.currentTarget.classList.add('active');
+            }
+
+            applyFilters();
+        }
+
+        function applyFilters() {
+            const query = document.getElementById('featureSearchInput').value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.feature-card');
+
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category') || '';
+                const categoryMatch = currentCategory === 'all' || cardCategory.includes(currentCategory);
+                const titleText = card.querySelector('h2').textContent.toLowerCase();
+                const descText = card.querySelector('p').textContent.toLowerCase();
+                const searchMatch = titleText.includes(query) || descText.includes(query);
+
+                if (categoryMatch && searchMatch) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        document.getElementById('featureSearchInput').addEventListener('input', applyFilters);
+
+        function toggleFaq(button) {
+            const item = button.parentElement;
+            item.classList.toggle('active');
+        }
+    </script>
+
+</body>
+
+</html>
