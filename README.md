@@ -1,35 +1,71 @@
-# OverloadFit — Personalized Fitness Platform
+# OverloadFit — Personalized Fitness & Workout Platform
 
-OverloadFit is a fitness platform designed to help users manage their fitness journey through personalized workout plans, diet recommendations, exercise tracking, and progress monitoring. The platform aims to make fitness planning easier by providing users with tools to organize workouts and track their progress over time.
+**Train Smarter. Track Progress. Get Stronger.**
 
-## Features
+OverloadFit is a full-stack fitness web application designed to help users manage their fitness journey through personalized workout planning, nutrition recommendations, exercise tracking, and performance analytics.
 
-- **User Authentication** — Register and log in securely.
-- **Fitness Assessment** — Provide fitness-related information to personalize your experience.
-- **Personalized Workout Plans** — Follow workout routines based on individual fitness goals.
-- **Diet Planning** — Access diet recommendations to support fitness goals.
-- **Workout Logging** — Record workouts and exercises.
-- **Progressive Overload Tracking** — Track workout performance and gradually increase training intensity.
-- **Exercise Library** — Explore exercises for different muscle groups.
-- **Progress Tracking** — Monitor fitness and workout improvements over time.
-- **Profile Management** — Manage personal details and fitness preferences.
+The platform combines fitness assessments, workout generation, progressive overload tracking, and nutrition planning to help users follow a more structured and goal-oriented fitness routine.
+
+## Key Features
+
+### 1. User Authentication
+- User registration and login.
+- JWT-based authentication.
+- Password hashing for secure credential storage.
+- Protected application routes and API endpoints.
+
+### 2. Fitness Assessment
+- Collect fitness-related information and preferences.
+- Support fitness goals and physique-oriented planning.
+- Use assessment information to personalize fitness recommendations.
+
+### 3. Personalized Workout Planning
+- Generate workout plans based on fitness goals and assessment data.
+- Organize exercises into structured training routines.
+- Support progressive overload principles to help users improve their performance over time.
+
+### 4. Exercise Library
+- Explore exercises and their relevant information.
+- Support exercise selection when planning workouts.
+- Organize exercise information for easier reference.
+
+### 5. Workout Logging
+- Record completed workouts.
+- Track exercise performance and training history.
+- Maintain workout records for reviewing progress.
+
+### 6. Nutrition and Diet Planning
+- Generate diet recommendations based on fitness goals.
+- Support calorie and macronutrient calculations.
+- Help users align nutrition planning with their workout objectives.
+
+### 7. Progress Analytics
+- Review workout history and performance trends.
+- Track strength and training progression.
+- Visualize relevant fitness metrics using charts.
+
+### 8. User Profile
+- Manage personal and fitness-related information.
+- Maintain preferences used for personalized recommendations.
 
 ## Technology Stack
 
-The project uses a frontend and backend architecture.
-
 ### Frontend
-- HTML
-- CSS
-- JavaScript
+- **React** — Component-based user interface.
+- **Vite** — Frontend development server and build tool.
+- **React Router** — Client-side navigation.
+- **Axios** — HTTP requests to backend APIs.
+- **Chart.js** — Data visualization and progress analytics.
+- **CSS** — Styling and responsive interface design.
 
 ### Backend
-- Node.js
-- Express.js
-- MongoDB
-- JWT authentication
-
-> Note: The original frontend was developed using React and JSX. Update the frontend technology list if your current version still uses React instead of vanilla HTML, CSS, and JavaScript.
+- **Node.js** — JavaScript runtime.
+- **Express.js** — REST API and server framework.
+- **MongoDB** — Database.
+- **Mongoose** — MongoDB object modeling.
+- **JSON Web Token (JWT)** — Authentication.
+- **bcryptjs** — Password hashing.
+- **Validation Middleware** — Request validation and input handling.
 
 ## Project Structure
 
@@ -38,108 +74,161 @@ OverloadFit/
 ├── frontend/
 │   ├── public/
 │   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   ├── App.jsx
+│   │   └── ...
 │   ├── package.json
-│   └── ...
+│   └── vite.config.js
+│
 ├── backend/
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   ├── middleware/
+│   ├── services/
 │   ├── package.json
-│   ├── .env
 │   └── ...
+│
 └── README.md
 ```
 
-The exact files and folders may vary depending on your current project version.
+*Note: This is a representative structure. Folder names and locations should match the actual files in your repository.*
+
+## Prerequisites
+
+Before running the project, install:
+
+- [Node.js](https://nodejs.org/)
+- npm, included with Node.js
+- [MongoDB](https://www.mongodb.com/) locally or through MongoDB Atlas
+- [Git](https://git-scm.com/)
 
 ## Installation and Setup
 
-### Prerequisites
-
-Install the following before running the project:
-
-- Node.js and npm
-- MongoDB, either locally or through MongoDB Atlas
-- Git
-
-### 1. Clone the Repository
+### Step 1: Clone the Repository
 
 ```bash
 git clone https://github.com/sinstvgod-create/Web-Development.git
 cd Web-Development
 ```
 
-### 2. Set Up the Backend
+### Step 2: Install Backend Dependencies
 
-Navigate to the backend directory:
+Open a terminal at the repository root and run:
 
 ```bash
 cd backend
 npm install
 ```
 
-Create a `.env` file in the `backend/` directory and configure the required environment variables:
+### Step 3: Configure Environment Variables
+
+Create a `.env` file inside `backend/`, using the variable names expected by your backend configuration.
+
+For example:
 
 ```env
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
+JWT_SECRET=your_secure_secret
 ```
 
-Replace the placeholder values with your actual MongoDB connection string and a secure JWT secret.
+These are example names and values. Confirm the exact environment-variable names in your backend source code before using them.
 
-Start the backend server:
+Never commit real database credentials, authentication secrets, or `.env` files to GitHub.
+
+### Step 4: Start the Backend Server
+
+Check the scripts in `backend/package.json`:
 
 ```bash
 npm run dev
 ```
 
-The backend is expected to run at `http://localhost:5000`, provided that the application is configured to use this port.
+If a `dev` script is not defined, use the appropriate script from your package file, such as:
 
-### 3. Set Up the Frontend
+```bash
+npm start
+```
 
-Open a new terminal at the repository root and navigate to the frontend directory:
+The backend URL and port depend on your server configuration.
+
+### Step 5: Install Frontend Dependencies
+
+Open a second terminal at the repository root:
 
 ```bash
 cd frontend
 npm install
 ```
 
-Start the frontend:
+### Step 6: Start the Frontend
+
+Run:
 
 ```bash
 npm run dev
 ```
 
-If your frontend uses Vite, it will typically be available at:
+Vite will display the local development URL in your terminal, commonly:
 
 `http://localhost:5173`
 
-Use the local URL displayed in your terminal if it differs.
+Open that URL in your browser.
 
-## Environment Variables
+### Step 7: Connect Frontend and Backend
 
-| Variable | Description |
-|---|---|
-| `PORT` | Port used by the backend server |
-| `MONGO_URI` | MongoDB connection string |
-| `JWT_SECRET` | Secret used to sign and verify authentication tokens |
+Make sure the frontend API service is configured to use the backend's actual URL and port. If the frontend uses environment variables for API configuration, create the appropriate frontend environment file using the variable name expected by the code.
 
-**Security:** Never commit your `.env` file, database credentials, or private authentication secrets to GitHub. Add `.env` to your `.gitignore` file.
+If requests fail, check the API base URL, CORS configuration, backend status, and MongoDB connection.
 
-## Usage
+## Application Workflow
 
-1. Start the backend server.
-2. Start the frontend application.
-3. Open the frontend URL in your browser.
-4. Register or log in to your account.
-5. Complete your fitness assessment, if available.
-6. Explore workout plans, diet recommendations, and the exercise library.
-7. Log your workouts and monitor your progress.
+1. Register a new account or log in.
+2. Complete the fitness assessment.
+3. Explore personalized workout recommendations.
+4. Review exercise information and training routines.
+5. Record completed workouts.
+6. Explore diet and nutrition recommendations.
+7. Review workout history and performance analytics.
+8. Manage profile information and fitness preferences.
 
-## Future Enhancements
+The availability of each workflow depends on the routes and functionality enabled in the current application version.
 
-- Advanced fitness analytics and progress visualizations.
-- More personalized workout and nutrition recommendations.
-- Additional exercise categories and training programs.
-- Improved mobile responsiveness and user experience.
+## API and Backend Architecture
+
+The backend follows a REST API architecture, with routes handling incoming requests and controllers/services managing application logic.
+
+Major functional areas include:
+
+- Authentication and user management.
+- Fitness assessment and workout generation.
+- Exercise information.
+- Workout logging and training history.
+- Diet planning and nutrition calculations.
+- Progress tracking and user profiles.
+
+MongoDB and Mongoose support the storage and retrieval of application data.
+
+## Security Considerations
+
+- Store passwords as secure hashes rather than plaintext.
+- Protect private API endpoints with appropriate authentication middleware.
+- Validate incoming requests.
+- Keep JWT secrets and database credentials out of source control.
+- Configure CORS according to the application's deployment environment.
+- Avoid exposing private user information in API responses.
+
+## Future Improvements
+
+- Expanded exercise library and training recommendations.
+- More detailed progress charts and performance comparisons.
+- Improved nutrition personalization.
+- Additional workout templates and training splits.
+- Enhanced mobile responsiveness and accessibility.
+- Production deployment and automated testing.
 
 ## Contributing
 
@@ -147,14 +236,14 @@ Contributions and suggestions are welcome.
 
 1. Fork the repository.
 2. Create a feature branch.
-3. Make your changes.
+3. Implement and test your changes.
 4. Commit your changes with a descriptive message.
-5. Open a pull request.
+5. Submit a pull request.
 
 ## License
 
-No license has been specified yet. All rights remain with the respective copyright holder unless a license is added to the repository.
+No license has been specified in this README. Unless a license is added to the repository, permissions to reuse, distribute, or modify the project should not be assumed.
 
 ---
 
-**OverloadFit — Train Smarter. Track Progress. Get Stronger.**
+**OverloadFit — Your Fitness Journey, Structured.**
