@@ -22,9 +22,11 @@ const PORT =
 
 connectDB();
 
+// Updated CORS configuration to allow local development and any deployed frontend
 app.use(
   cors({
-    origin: "http://localhost:5173"
+    origin: ["http://localhost:5173", "*"], // Allows local dev and public origins
+    credentials: true
   })
 );
 
