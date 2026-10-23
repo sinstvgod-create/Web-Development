@@ -17,15 +17,17 @@ dotenv.config();
 
 const app = express();
 
-const PORT =
-  process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000;
 
 connectDB();
 
-// Updated CORS configuration to allow local development and any deployed frontend
+// Fixed CORS configuration for production and local development
 app.use(
   cors({
-    origin: ["http://localhost:5173", "*"], // Allows local dev and public origins
+    origin: [
+      "http://localhost:5173",
+      "https://overloadfit-frontend.onrender.com"
+    ],
     credentials: true
   })
 );
@@ -34,49 +36,20 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
   res.json({
-    message:
-      "OverloadFit API is running",
+    message: "OverloadFit API is running",
     status: "success"
   });
 });
 
-app.use(
-  "/api/auth",
-  authRoutes
-);
-
-app.use(
-  "/api/profile",
-  profileRoutes
-);
-
-app.use(
-  "/api/plan",
-  planRoutes
-);
-
-app.use(
-  "/api/workouts",
-  workoutRoutes
-);
-
-app.use(
-  "/api/exercises",
-  exerciseRoutes
-);
-
-app.use(
-  "/api/progress",
-  progressRoutes
-);
+app.use("/api/auth", authRoutes);
+app.use("/api/profile", profileRoutes);
+app.use("/api/plan", planRoutes);
+app.use("/api/workouts", workoutRoutes);
+app.use("/api/exercises", exerciseRoutes);
+app.use("/api/progress", progressRoutes);
 
 app.use(errorMiddleware);
 
-app.listen(
-  PORT,
-  () => {
-    console.log(
-      `OverloadFit backend running on http://localhost:${PORT}`
-    );
-  }
-);
+app.listen(PORT, () => {
+  console.log(`OverloadFit backend running on http://localhost:${PORT}`);
+});
