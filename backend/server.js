@@ -26,7 +26,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://overloadfit-frontend.onrender.com"
+      "https://overloadfit-frontend-v5fg.onrender.com"
     ],
     credentials: true
   })
